@@ -5,6 +5,7 @@ export default {
     "./privacy-policy.html",
     "./terms-and-conditions.html",
     "./disclaimer.html",
+    "./contact.html",
     "./src//*.{js,ts,jsx,tsx}",
   ],
   theme: {

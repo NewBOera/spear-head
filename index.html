@@ -14,36 +14,262 @@
     />
   </head>
   <body class="bg-gray-50 font-Poppins">
-    <!-- Navbar -->
     <nav class="w-full bg-white shadow-md">
-      <div class="max-w-7xl mx-auto px-4">
-        <div class="flex justify-center items-center py-2">
-          <a href="index.html#hero">
-            <img
-              src="public/logo.png"
-              alt="DigiMarkPro Logo"
-              class="w-40 lg:w-48 h-auto"
-            />
-          </a>
+      <div class="mx-auto max-w-7xl px-4">
+        <div class="items-center| flex justify-center">
+          <img src="/public/logo.webp" alt="DigiMarkPro Logo" class="w-[140px] object-contain" />
         </div>
       </div>
     </nav>
 
-    <!-- Hero Section -->
     <section
       id="hero"
-      class="min-h-screen bg-cover bg-center flex items-center"
-      style="
-        background-image: url('https://images.unsplash.com/photo-1557426272-fc759fdf7a8d?auto=format&fit=crop&q=80');
-      "
+      class="mblg:bg-[url('/public/hero/bg-hero-tab.webp')] mblg:min-h-[380px] mblg:h-[60vh] 4xl:bg-[url('/public/hero/bg-hero-desk.webp')] 4xl:h-[70vh] h-[80vh] bg-[url('/public/hero/bg-hero-mob.webp')] bg-cover bg-center lg:h-[100vh]"
     >
-      <div class="max-w-7xl mx-auto px-4 text-center text-white">
-        <h1 class="text-4xl md:text-6xl font-bold mb-4">
-          Transform Your Digital Presence
-        </h1>
-        <p class="text-xl md:text-2xl">
-          Innovative solutions for modern businesses
+      <div class="mblg:items-center mblg:justify-center 4xl:relative container flex h-full w-full max-w-6xl items-center">
+        <div class="mblg:mx-0 mblg:mb-0 mblg:ml-40 4xl:ml-0 mx-auto mb-[200px] px-4 py-8 text-center text-white md:ml-60 lg:ml-80 lg:mr-20">
+          <h1
+            class="mblg:text-[24px]/tight mblg:max-w-[350px] mb-4 max-w-[280px] font-Montserrat text-[24px]/tight font-normal text-black md:max-w-[400px] md:text-[30px]/tight lg:max-w-[450px] lg:text-[35px]/tight"
+          >
+            <span class="text-redPrimary font-bold">La mejor</span>
+            oportunidad de inversión en México
+          </h1>
+
+          <h2 class="text-redPrimary mblg:text-[43px]/none font-Montserrat text-[40px]/none font-extrabold md:text-5xl/none lg:text-6xl/none">
+            PETRÓLEO
+            <br />
+            CRUDO
+          </h2>
+          <h3 class="mblg:text-[22px]/tight mt-4 w-full font-Montserrat text-[24px]/none font-bold text-black md:text-2xl/none lg:text-[32px]/tight">
+            Mejore sus ganancias
+            <br />
+            potenciales
+          </h3>
+        </div>
+
+        <article class="4xl:flex 4xl:absolute 4xl:right-0 4xl:mt-20 hidden w-full max-w-[350px] justify-center rounded-md bg-[#F8F8F8] px-4 py-4 shadow-[0px_0px_10px_0px_#00000026]">
+          <div class="flex max-w-[500px] flex-col gap-6">
+            <h2 class="text-center font-Poppins text-[17px] font-bold text-[#4F4F4F]">Solicita más información sin compromiso</h2>
+
+            <form id="contactForm1" action="" class="contact-form flex flex-wrap gap-6">
+              <input
+                type="text"
+                name="name"
+                placeholder="Nombre Completo"
+                class="w-full rounded-md border border-gray-300 px-3 py-2 font-Poppins text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+              <div id="name-error-1" class="-mt-6 hidden text-xs text-red-500"></div>
+
+              <input
+                type="email"
+                name="email"
+                placeholder="Correo Electrónico"
+                class="w-full rounded-md border border-gray-300 px-3 py-2 font-Poppins text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+              <div id="email-error-1" class="-mt-6 hidden text-xs text-red-500"></div>
+
+              <div class="phone-container relative w-full" id="phone-container-1">
+                <div class="flex w-full overflow-hidden rounded-md border border-gray-300">
+                  <button type="button" class="country-selector flex cursor-pointer items-center space-x-1 border-r border-gray-300 bg-white px-3 py-2">
+                    <img class="selected-flag h-3 w-4 rounded-sm object-cover" src="https://flagcdn.com/16x12/mx.webp" alt="México" />
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-500" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                    </svg>
+                  </button>
+                  <input type="tel" name="phone" placeholder="Número de teléfono" class="w-full flex-1 px-3 py-2 font-Poppins text-sm focus:outline-none" />
+                </div>
+                <div id="phone-error-1" class="mt-1 hidden text-xs text-red-500"></div>
+
+                <div class="country-dropdown absolute left-0 top-full z-10 mt-1 hidden max-h-60 w-64 overflow-y-auto rounded-md border border-gray-300 bg-white font-Poppins text-sm shadow-lg"></div>
+              </div>
+
+              <div class="relative w-full">
+                <select
+                  name="country"
+                  class="w-full appearance-none rounded-md border border-black/20 border-gray-300 bg-[url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23000000%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E')] bg-[length:0.7em] bg-[right_0.7em_center] bg-no-repeat px-3 py-2.5 font-Poppins text-sm font-normal outline-none focus:outline-none focus:ring-2 focus:ring-blue-500"
+                >
+                  <option value="" disabled selected>Selecciona tu país</option>
+                  <option value="mx">Mexico</option>
+                  <option value="us">Estados Unidos</option>
+                  <option value="es">España</option>
+                  <option value="ca">Canadá</option>
+                  <option value="ar">Argentina</option>
+                  <option value="co">Colombia</option>
+                  <option value="cl">Chile</option>
+                  <option value="pe">Perú</option>
+                </select>
+                <div id="country-error-1" class="hidden text-xs text-red-500"></div>
+              </div>
+
+              <div class="flex items-center">
+                <label class="relative inline-flex cursor-pointer items-center">
+                  <input type="checkbox" name="terms" class="terms-checkbox peer sr-only" required />
+                  <div class="relative h-6 w-12 rounded-full bg-gray-400 transition-all duration-200 peer-checked:bg-[#058789] peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-blue-300">
+                    <div class="dot absolute left-1 top-1 flex h-4 w-4 items-center justify-center rounded-full bg-white transition-all duration-200">
+                      <svg class="h-3 w-3 text-[#058789] opacity-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                      </svg>
+                    </div>
+                  </div>
+                </label>
+                <label for="terms" class="ml-3 font-Poppins text-xs">
+                  Acepto la
+                  <a href="privacy-policy.html" class="text-blue-500 hover:underline">Política de Privacidad</a>
+                  y los
+                  <a href="terms-and-conditions.html" class="text-blue-500 hover:underline">Términos y Condiciones</a>
+                </label>
+              </div>
+
+              <button
+                type="submit"
+                class="submit-button w-full rounded-md bg-[#058789] px-1.5 py-6 font-Poppins text-[17px] font-bold text-white transition-all duration-200 hover:scale-105 lg:text-lg"
+              >
+                Aprenda a negociar en línea
+              </button>
+            </form>
+
+            <article class="flex flex-wrap items-center justify-between gap-2">
+              <img src="/public/payment-methods/visa.webp" class="w-10 object-contain" alt="" />
+              <img src="/public/payment-methods/mastercard.webp" class="w-10 object-contain" alt="" />
+              <img src="/public/payment-methods/maestro.webp" class="w-10 object-contain" alt="" />
+              <img src="/public/payment-methods/apple.webp" class="w-10 object-contain" alt="" />
+            </article>
+
+            <p class="text-center font-Poppins text-xs">Para invertir en línea debes tener al menos 18 años. Capital mínimo requerido 200 USD.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <div class="mblg:py-6 bg-[#000000] py-3 lg:py-4">
+      <div class="container mx-auto text-white flex items-center gap-6">
+        <svg
+          class="w-6 h-6 mr-2 hidden md:block lg:hidden -rotate-90"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M10 19l-7-7m0 0l7-7m-7 7h18"
+          />
+        </svg>
+
+        <p class="mblg:font-medium mblg:text-lg px-2 text-center font-Montserrat text-[18px]/tight text-white md:text-xl md:font-semibold lg:text-start lg:text-[22px]/tight">
+          ¡Invierte y aprende como obtener un segundo ingreso!
         </p>
+
+        <svg
+          class="w-6 h-6 mr-2 hidden md:block -rotate-90 lg:-rotate-180"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M10 19l-7-7m0 0l7-7m-7 7h18"
+          />
+        </svg>
+      </div>
+    </div>
+
+    <section id="contact" class="4xl:hidden py-10">
+      <div class="container mx-auto flex max-w-7xl justify-center">
+        <article class="flex w-full max-w-[500px] justify-center rounded-md px-4 py-4 shadow-[0px_0px_10px_0px_#00000026] lg:min-w-full">
+          <div class="flex max-w-[500px] flex-col gap-6">
+            <h2 class="text-center font-Poppins text-[17px] font-bold text-[#4F4F4F]">Solicita más información sin compromiso</h2>
+
+            <form id="contactForm2" action="" class="contact-form flex flex-wrap gap-6">
+              <input
+                type="text"
+                name="name"
+                placeholder="Nombre Completo"
+                class="w-full rounded-md border border-gray-300 px-3 py-2 font-Poppins text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+              <div id="name-error-2" class="-mt-6 hidden text-xs text-red-500"></div>
+
+              <input
+                type="email"
+                name="email"
+                placeholder="Correo Electrónico"
+                class="w-full rounded-md border border-gray-300 px-3 py-2 font-Poppins text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+              <div id="email-error-2" class="-mt-6 hidden text-xs text-red-500"></div>
+
+              <div class="phone-container relative w-full" id="phone-container-2">
+                <div class="flex w-full overflow-hidden rounded-md border border-gray-300">
+                  <button type="button" class="country-selector flex cursor-pointer items-center space-x-1 border-r border-gray-300 bg-white px-3 py-2">
+                    <img class="selected-flag h-3 w-4 rounded-sm object-cover" src="https://flagcdn.com/16x12/mx.webp" alt="México" />
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-500" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                    </svg>
+                  </button>
+                  <input type="tel" name="phone" placeholder="Número de teléfono" class="w-full flex-1 px-3 py-2 font-Poppins text-sm focus:outline-none" />
+                </div>
+                <div id="phone-error-2" class="mt-1 hidden text-xs text-red-500"></div>
+
+                <div class="country-dropdown absolute left-0 top-full z-10 mt-1 hidden max-h-60 w-64 overflow-y-auto rounded-md border border-gray-300 bg-white font-Poppins text-sm shadow-lg"></div>
+              </div>
+
+              <div class="relative w-full">
+                <select
+                  name="country"
+                  class="w-full appearance-none rounded-md border border-black/20 border-gray-300 bg-[url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23000000%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E')] bg-[length:0.7em] bg-[right_0.7em_center] bg-no-repeat px-3 py-2.5 font-Poppins text-sm font-normal outline-none focus:outline-none focus:ring-2 focus:ring-blue-500"
+                >
+                  <option value="" disabled selected>Selecciona tu país</option>
+                  <option value="mx">Mexico</option>
+                  <option value="us">Estados Unidos</option>
+                  <option value="es">España</option>
+                  <option value="ca">Canadá</option>
+                  <option value="ar">Argentina</option>
+                  <option value="co">Colombia</option>
+                  <option value="cl">Chile</option>
+                  <option value="pe">Perú</option>
+                </select>
+                <div id="country-error-2" class="hidden text-xs text-red-500"></div>
+              </div>
+
+              <div class="flex items-center">
+                <label class="relative inline-flex cursor-pointer items-center">
+                  <input type="checkbox" name="terms" class="terms-checkbox peer sr-only" required />
+                  <div class="relative h-6 w-12 rounded-full bg-gray-400 transition-all duration-200 peer-checked:bg-[#058789] peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-blue-300">
+                    <div class="dot absolute left-1 top-1 flex h-4 w-4 items-center justify-center rounded-full bg-white transition-all duration-200">
+                      <svg class="h-3 w-3 text-[#058789] opacity-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                      </svg>
+                    </div>
+                  </div>
+                </label>
+                <label class="ml-3 font-Poppins text-xs">
+                  Acepto la
+                  <a href="privacy-policy.html" class="text-blue-500 hover:underline">Política de Privacidad</a>
+                  y los
+                  <a href="terms-and-conditions.html" class="text-blue-500 hover:underline">Términos y Condiciones</a>
+                </label>
+              </div>
+
+              <button
+                type="submit"
+                class="submit-button w-full rounded-md bg-[#058789] px-1.5 py-6 font-Poppins text-[17px] font-bold text-white transition-all duration-200 hover:scale-105 lg:text-lg"
+              >
+                Aprenda a negociar en línea
+              </button>
+            </form>
+
+            <article class="flex flex-wrap items-center justify-between gap-2">
+              <img src="/public/payment-methods/visa.webp" class="w-10 object-contain" alt="" />
+              <img src="/public/payment-methods/mastercard.webp" class="w-10 object-contain" alt="" />
+              <img src="/public/payment-methods/maestro.webp" class="w-10 object-contain" alt="" />
+              <img src="/public/payment-methods/apple.webp" class="w-10 object-contain" alt="" />
+            </article>
+
+            <p class="text-center font-Poppins text-xs">Para invertir en línea debes tener al menos 18 años. Capital mínimo requerido 200 USD.</p>
+          </div>
+        </article>
       </div>
     </section>
 
@@ -153,7 +379,7 @@
             class="p-4 rounded-md text-center w-full sm:min-w-[236px] lg:max-w-[300px] bg-shGray-light border"
           >
             <img
-              src="public/service_1.png"
+              src="public/service_1.webp"
               alt="Target"
               class="w-16 h-16 mx-auto mb-6"
             />
@@ -163,7 +389,7 @@
             class="p-4 rounded-md text-center w-full sm:min-w-[236px] lg:max-w-[300px] bg-shGray-light border"
           >
             <img
-              src="public/service_2.png"
+              src="public/service_2.webp"
               alt="Chart"
               class="w-16 h-16 mx-auto mb-6"
             />
@@ -173,7 +399,7 @@
             class="p-4 rounded-md text-center w-full sm:min-w-[236px] lg:max-w-[300px] bg-shGray-light border"
           >
             <img
-              src="public/service_3.png"
+              src="public/service_3.webp"
               alt="Tools"
               class="w-16 h-16 mx-auto mb-6"
             />
@@ -183,7 +409,7 @@
             class="p-4 rounded-md text-center w-full sm:min-w-[236px] lg:max-w-[300px] bg-shGray-light border"
           >
             <img
-              src="public/service_4.png"
+              src="public/service_4.webp"
               alt="Support"
               class="w-16 h-16 mx-auto mb-6"
             />
@@ -207,14 +433,14 @@
         <div
           class="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-4 xl:grid-cols-8 gap-4 items-center justify-items-center"
         >
-          <img src="public/payment_1.png" alt="Visa" class="h-5" />
-          <img src="public/payment_2.png" alt="Mastercard" class="h-8" />
-          <img src="public/payment_3.png" alt="Maestro" class="h-8" />
-          <img src="public/payment_4.png" alt="Skrill" class="h-5" />
-          <img src="public/payment_5.png" alt="Bank Transfer" class="h-12" />
-          <img src="public/payment_6.png" alt="Apple Pay" class="h-11" />
-          <img src="public/payment_7.png" alt="Paysafecard" class="h-11" />
-          <img src="public/payment_8.png" alt="SafetyPay" class="h-10" />
+          <img src="public/payment_1.webp" alt="Visa" class="h-5" />
+          <img src="public/payment_2.webp" alt="Mastercard" class="h-8" />
+          <img src="public/payment_3.webp" alt="Maestro" class="h-8" />
+          <img src="public/payment_4.webp" alt="Skrill" class="h-5" />
+          <img src="public/payment_5.webp" alt="Bank Transfer" class="h-12" />
+          <img src="public/payment_6.webp" alt="Apple Pay" class="h-11" />
+          <img src="public/payment_7.webp" alt="Paysafecard" class="h-11" />
+          <img src="public/payment_8.webp" alt="SafetyPay" class="h-10" />
         </div>
       </div>
     </section>
@@ -224,7 +450,7 @@
       <div class="max-w-7xl mx-auto px-4">
         <div class="flex justify-center mb-16">
           <a href="index.html#hero">
-            <img src="public/logo.png" alt="Digital Spearhead" class="h-16" />
+            <img src="public/logo.webp" alt="Digital Spearhead" class="h-16" />
           </a>
         </div>
         <div class="flex flex-col items-center gap-4 text-center">
@@ -259,5 +485,6 @@
     </footer>
 
     <script type="module" src="/src/main.js"></script>
+    <script defer src="/src/form.js"></script>
   </body>
 </html>
