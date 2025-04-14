@@ -14,7 +14,7 @@
     />
   </head>
   <body class="bg-gray-50 font-Poppins">
-    <nav class="w-full bg-white shadow-md">
+    <nav class="w-full bg-white shadow-md" id="navbar">
       <div class="mx-auto max-w-7xl px-4">
         <div class="items-center| flex justify-center">
           <img src="/public/logo.webp" alt="DigiMarkPro Logo" class="w-[140px] object-contain" />
@@ -27,7 +27,7 @@
       class="mblg:bg-[url('/public/hero/bg-hero-tab.webp')] mblg:min-h-[380px] mblg:h-[60vh] 4xl:bg-[url('/public/hero/bg-hero-desk.webp')] 4xl:h-[70vh] h-[80vh] bg-[url('/public/hero/bg-hero-mob.webp')] bg-cover bg-center lg:h-[100vh]"
     >
       <div class="mblg:items-center mblg:justify-center 4xl:relative container flex h-full w-full max-w-6xl items-center">
-        <div class="mblg:mx-0 mblg:mb-0 mblg:ml-40 4xl:ml-0 mx-auto mb-[200px] px-4 py-8 text-center text-white md:ml-60 lg:ml-80 lg:mr-20">
+        <div class="mblg:mx-0 mblg:mb-0 mblg:ml-40 4xl:ml-0 mx-auto  px-4 py-8 text-center text-white md:ml-60 lg:ml-80 lg:mr-20  h-full">
           <h1
             class="mblg:text-[24px]/tight mblg:max-w-[350px] mb-4 max-w-[280px] font-Montserrat text-[24px]/tight font-normal text-black md:max-w-[400px] md:text-[30px]/tight lg:max-w-[450px] lg:text-[35px]/tight"
           >
@@ -45,6 +45,10 @@
             <br />
             potenciales
           </h3>
+
+          <a href="#contact" class="bg-redPrimary mt-40 mblg:mt-4 inline-block rounded-md px-4 py-2 text-center font-Montserrat text-[17px] font-bold text-white transition-all duration-200 hover:scale-105 lg:text-lg 4xl:hidden cursor-pointer">
+            Inscríbete ahora!
+          </a>
         </div>
 
         <article class="4xl:flex 4xl:absolute 4xl:right-0 4xl:mt-20 hidden w-full max-w-[350px] justify-center rounded-md bg-[#F8F8F8] px-4 py-4 shadow-[0px_0px_10px_0px_#00000026]">
@@ -363,6 +367,15 @@
         </div>
         <!-- Hidden element for PlexopAPI integration if needed -->
         <div id="cmt" style="display: none"></div>
+
+        <a href="#contact" class="bg-teal-600 mt-8 inline-block rounded-md px-8 py-4 text-center font-Montserrat text-[17px] font-bold text-white transition-all cursor-pointer duration-200 hover:scale-105 lg:text-lg 4xl:hidden">
+          Inscríbete ahora!
+        </a>
+
+        <a href="#navbar" class="bg-teal-600 mt-8 rounded-md px-8 py-4 hidden text-center font-Montserrat text-[17px] font-bold text-white transition-all duration-200 hover:scale-105 lg:text-lg 4xl:inline-block cursor-pointer">
+          Inscríbete ahora!
+        </a>
+        
       </div>
     </section>
 
@@ -421,7 +434,7 @@
             href="#"
             class="inline-block bg-teal-600 w-full sm:max-w-[400px] text-white px-8 py-7 rounded-md text-xl font-bold hover:bg-teal-700 transition-colors"
           >
-            Aprenda a negociar en línea
+            Inscríbete ahora
           </a>
         </div>
       </div>

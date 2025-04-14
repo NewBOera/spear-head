@@ -33,3 +33,7 @@
 .card {
   @apply bg-white rounded-lg shadow-lg p-6;
 }
+
+html, body {
+  scroll-behavior: smooth;
+}
