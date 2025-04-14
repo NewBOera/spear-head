@@ -26,7 +26,7 @@ export default {
       colors: {
         redPrimary: "#ED0606",
         shGray: {
-          light: "#F2F2F2",
+          light: "#F1F1F1",
           DEFAULT: "#4F4F4F",
           dark: "#2F2F2F",
         },

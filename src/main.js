@@ -1,99 +1,69 @@
-// Form validation and submission
-document.addEventListener('DOMContentLoaded', () => {
-  const form = document.getElementById('contactForm');
-  if (form) {
-    form.addEventListener('submit', handleFormSubmit);
+// Calculator with fixed error handling
+document.addEventListener("DOMContentLoaded", function () {
+  // Get DOM elements
+  var initial = document.getElementById("initial-value");
+  var potencial = document.getElementById("potencial-value");
+  var calc_btn = document.getElementsByClassName("calc-btn")[0];
+  var err_msg_calculator = document.getElementsByClassName("error-msg-calc")[0];
+
+  // Clear any pre-filled value in the potential field
+  potencial.value = "";
+
+  // Make sure error is hidden on page load
+  if (err_msg_calculator.classList.contains("d-none") === false) {
+    err_msg_calculator.classList.add("d-none");
   }
 
-  // Mobile menu toggle
-  const menuButton = document.getElementById('menuButton');
-  const mobileMenu = document.getElementById('mobileMenu');
-  
-  if (menuButton && mobileMenu) {
-    menuButton.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
-    });
-  }
+  // Calculator function
+  calc_btn.addEventListener("click", function () {
+    // Get input value
+    var initial_value = parseFloat(initial.value);
 
-  // Smooth scrolling for navigation links
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-      e.preventDefault();
-      const targetId = this.getAttribute('href').slice(1);
-      const target = document.getElementById(targetId);
-      if (target) {
-        target.scrollIntoView({
-          behavior: 'smooth'
-        });
-        // Close mobile menu if open
-        if (mobileMenu) {
-          mobileMenu.classList.add('hidden');
-        }
+    // Clear error display state (using direct style manipulation for reliability)
+    err_msg_calculator.style.display = "none";
+    err_msg_calculator.classList.add("d-none");
+
+    // Validate input is a number
+    if (isNaN(initial_value)) {
+      potencial.value = "";
+      err_msg_calculator.textContent = "Por favor ingresa un número válido";
+      err_msg_calculator.style.color = "red";
+      err_msg_calculator.style.display = "block";
+      err_msg_calculator.classList.remove("d-none");
+      return;
+    }
+
+    // Process based on value range
+    if (initial_value < 200) {
+      potencial.value = "";
+      err_msg_calculator.textContent = "El valor mínimo debe ser 200";
+      err_msg_calculator.style.color = "red";
+      err_msg_calculator.style.display = "block";
+      err_msg_calculator.classList.remove("d-none");
+    } else if (initial_value == 200) {
+      potencial.value = (initial_value * 2.13254).toFixed(2);
+    } else if (initial_value > 200 && initial_value < 500) {
+      potencial.value = (initial_value * 2.51257).toFixed(2);
+    } else if (initial_value >= 500 && initial_value < 1000) {
+      potencial.value = (initial_value * 3.54563).toFixed(2);
+    } else if (initial_value >= 1000 && initial_value < 5000) {
+      potencial.value = (initial_value * 5.19874).toFixed(2);
+    } else if (initial_value >= 5000) {
+      potencial.value = (initial_value * 5.53647).toFixed(2);
+    }
+
+    // Handle PlexopAPI integration if available
+    if (typeof $ !== "undefined" && $("#cmt").length > 0) {
+      $("#cmt").text(potencial.value);
+
+      if (typeof PlexopAPI !== "undefined") {
+        PlexopAPI.setPlexopField("cmt", potencial.value);
       }
-    });
+    } else {
+      var cmtElement = document.getElementById("cmt");
+      if (cmtElement) {
+        cmtElement.textContent = potencial.value;
+      }
+    }
   });
 });
-
-function showToast(message) {
-  const toast = document.createElement('div');
-  toast.className = 'toast';
-  toast.textContent = message;
-  document.body.appendChild(toast);
-  
-  // Trigger reflow to enable transition
-  toast.offsetHeight;
-  toast.classList.add('show');
-  
-  setTimeout(() => {
-    toast.classList.remove('show');
-    setTimeout(() => {
-      document.body.removeChild(toast);
-    }, 300);
-  }, 3000);
-}
-
-async function handleFormSubmit(e) {
-  e.preventDefault();
-  
-  const nameInput = document.getElementById('fullName');
-  const emailInput = document.getElementById('email');
-  const privacyCheckbox = document.getElementById('privacyPolicy');
-  
-  // Validation
-  if (!nameInput.value.trim()) {
-    showToast('Please enter your full name');
-    return;
-  }
-  
-  if (!emailInput.value.trim() || !emailInput.value.includes('@')) {
-    showToast('Please enter a valid email address');
-    return;
-  }
-  
-  if (!privacyCheckbox.checked) {
-    showToast('Please accept the privacy policy');
-    return;
-  }
-  
-  // Here you would add your Google Script URL
-  const GOOGLE_SCRIPT_URL = 'YOUR_GOOGLE_SCRIPT_URL';
-  
-  try {
-    const response = await fetch(GOOGLE_SCRIPT_URL, {
-      method: 'POST',
-      body: JSON.stringify({
-        fullName: nameInput.value.trim(),
-        email: emailInput.value.trim()
-      })
-    });
-    
-    if (response.ok) {
-      showToast('Form submitted successfully!');
-      form.reset();
-    } else {
-      throw new Error('Submission failed');
-    }
-  } catch (error) {
-    showToast('Failed to submit form. Please try again.');
-  }
-}
